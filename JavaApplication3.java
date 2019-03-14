@@ -55,13 +55,14 @@ public class JavaApplication3 {
             escribe.close();
             //Acceso aleatorio
             r = new RandomAccessFile(new File(archivo), "rw");
-
             System.out.println(r.readLine());//Leo la primera línea
             System.out.println(r.readLine());
             System.out.println(r.readLine());
             r.seek(0); //Me situo al principio del archivo
+            r.readLine(); //Avanzo una línea
             r.writeUTF("NUEVA LINEA");
-            r.seek(0);
+            r.seek(0); //Me vuelvo a situar al principio
+            System.out.println(r.readLine());
             System.out.println(r.readLine());
             r.close();
             //Trabajo con objectos (Añadir interface serializable en el objecto creado)
